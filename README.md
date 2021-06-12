@@ -3,6 +3,11 @@
 ## Live Demo
 
 
+## Steps
+1. Use your mouse/trackpad/finger to click and hold on an object
+2. While continuing to hold drag that object to another part of the timeline 
+3. Once the object being dragged it over the target object, release and drop it into the target container, which will perform some action.
+
 ## Usage
 
 npm run start
