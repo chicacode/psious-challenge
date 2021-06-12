@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Timeline from '../components/Timeline';
-import Item from '../components/Item';
+import ItemList from './ItemList';
 import Footer from './Footer';
 import '../assets/styles/components/Layout.scss';
 
@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
       <div className="layout-image-container">
 
         <Timeline>
-          <Item />
+          <ItemList />
         </Timeline>
 
       </div>

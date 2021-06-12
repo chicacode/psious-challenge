@@ -20,9 +20,13 @@
   },
   "homepage": "https://github.com/chicacode/psious-challenge#readme",
   "dependencies": {
+    "components": "^0.1.0",
     "react": "^17.0.2",
     "react-beautiful-dnd": "^13.1.0",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "styled": "^1.0.0",
+    "styled-components": "^5.3.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
