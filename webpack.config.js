@@ -37,7 +37,18 @@ module.exports={
                   'css-loader',
                   'sass-loader',
                 ],
-              }
+              },
+              {
+                test: /\.(jpe?g|gif|png|svg|webp)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: 'assets/[hash].[ext]'
+                    },
+                  },
+                ],
+              },   
         ]
     },
     plugins:[

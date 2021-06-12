@@ -1,9 +1,10 @@
 import React from 'react';
+import Layout from '../components/Layout';
 import '../assets/styles/App.scss';
 
 const App = () => (
     <div className="App">
-        <h1>Hello Psious</h1>
+         <Layout/>
     </div>
 );
 

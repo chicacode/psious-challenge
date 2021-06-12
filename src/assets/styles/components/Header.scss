@@ -1,0 +1,36 @@
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    margin: auto;
+    border-top: 8px solid #c2c2c6;
+  }
+  
+  header #nav-bar .nav-link{
+      color: #3b3b3b;
+      text-transform: uppercase;
+  }
+  
+  header #nav-bar{
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  
+  ul {
+    list-style-type: none;
+    display: flex;
+    margin: 50px 10px 0px 0px;
+  }
+  
+  a{
+    text-decoration: none;
+    padding: 0px 15px 0px 17px;
+ 
+  }
+  
+  .nav-link, a:hover::after {
+    cursor: pointer;
+    color: #ccc;
+  }

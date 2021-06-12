@@ -5,7 +5,7 @@
 
 ## Usage
 
-
+npm run start
 I'm running local development environment with webpack dev server
 ## Install
 
