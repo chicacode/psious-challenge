@@ -9,8 +9,9 @@
 
 ## Install
 
-* use npm Git clone repo
-* Use the package manager NPM to install dependencies
+* use npm 
+* Git clone repo
+* use the package manager NPM to install dependencies
 
 
 ## Stack Technology & Tools
@@ -25,4 +26,4 @@ MIT
 ## Contact me on
 [LinkedIn](https://www.linkedin.com/in/geraldinealattrach/)
 ## Created by 
-Geraldine Hernandez Al Attrach
+Geraldine Hernandez Al Attrach 
