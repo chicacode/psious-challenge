@@ -6,17 +6,17 @@
 ## Usage
 
 
-
+I'm running local development environment with webpack dev server
 ## Install
 
-* use npm 
+* use npm install
 * Git clone repo
 * use the package manager NPM to install dependencies
 
 
 ## Stack Technology & Tools
 
-* [CSS3]
+* [CSS3]-[SASS]
 * [JavaScript]
 * [React] - JavaScript library for building user interfaces
 
