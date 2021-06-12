@@ -5,7 +5,6 @@ const Timeline = ({ children }) => (
   <section className='section-container'>
     <div className='section-container-item'>
       {children}
-      hola
     </div>
   </section>
 );

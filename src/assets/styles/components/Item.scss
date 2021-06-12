@@ -1,0 +1,35 @@
+
+  .items {
+    width: 100%;
+    color: #262626;
+    font-size: 40px;
+    background-color: #F3F6F7;
+  }
+  
+  .button-link{
+    margin-left: auto;
+    padding: 8px 16px;
+    border: 1px solid #fff;
+    background: #fff;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 20px;
+  }
+  
+  .items-container{
+    background-color: #F0CB35;
+  } 
+  
+  .items-description-container{
+    border: 1px solid #262626;
+    margin: 20px;
+    padding: 20px;
+    width: 200px;
+  }
+  .items-description{
+    display: flex;
+    justify-content: center;
+    border: 1px solid #262626;
+    padding: 20px;
+  }

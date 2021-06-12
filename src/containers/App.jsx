@@ -4,7 +4,7 @@ import '../assets/styles/App.scss';
 
 const App = () => (
     <div className="App">
-         <Layout/>
+        <Layout />
     </div>
 );
 
