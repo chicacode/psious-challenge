@@ -4,7 +4,7 @@ The exercise consists of creating a small Front project.
 Where Box 1, Box 2 and Box 3 are elements that you can drag inside the gray rectangle (which is the timeline). You can drag as many elements of the same type as many times as you want, you could have two Box 2's inside the gray rectangle.
 
 ## Demo
-![Alt text](/Desktop/image.png?raw=true "Demo")
+![Alt text](/https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRlNEAB0koKQ&psig=AOvVaw08G0NHvZlmaUkuHBvwlIzk&ust=1623700299755000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNjgrI-xlfECFQAAAAAdAAAAABAD?raw=true "Demo")
 ## Steps
 1. Use your mouse/trackpad/finger to click and hold on an object
 2. While continuing to hold drag that object to another part of the timeline 
