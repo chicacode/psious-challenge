@@ -18,14 +18,15 @@ I'm running local development environment with webpack dev server
 * Git clone repo
 * use the package manager NPM to install dependencies
 
-
 ## Stack Technology & Tools
 
 * [CSS3]-[SASS]
 * [JavaScript]
 * [React] - JavaScript library for building user interfaces
 
-
+## Dependencies
+* Styled components
+* React beautiful dnd
 ## License
 MIT
 ## Contact me on
