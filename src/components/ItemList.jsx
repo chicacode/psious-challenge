@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+
+import  Button  from './Button';
 import '../assets/styles/components/Item.scss';
 import { v4 as uuidv4 } from 'uuid';
- import { ITEMS } from '../utils/data';
+import { ITEMS } from '../utils/data';
 import styled from 'styled-components';
 
 
@@ -116,25 +118,6 @@ const Notice = styled.div`
       color: #aaa;
     `;
 
-const Button = styled.button`
-      display: flex;
-      align-items: center;
-      align-content: center;
-      justify-content: center;
-      margin: 0.5rem;
-      padding: 0.5rem;
-      color: #000;
-      border: 1px solid #ddd;
-      background: #fff;
-      border-radius: 3px;
-      font-size: 1rem;
-      cursor: pointer;
-    `;
-
-const ButtonText = styled.div`
-      margin: 0 1rem;
-    `;
-
 class ItemList extends Component {
     state = {
         [uuidv4()]: []
@@ -222,17 +205,9 @@ class ItemList extends Component {
                         </Kiosk>
                     )}
                 </Droppable>
-                {/* <div class="break"></div> */}
                 <Content>
-                    <Button onClick={this.addList}>
-                        <svg width="24" height="24" viewBox="0 0 24 24">
-                            <path
-                                fill="currentColor"
-                                d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"
-                            />
-                        </svg>
-                        <ButtonText>Add List</ButtonText>
-                    </Button>
+                    <Button addList={this.addList}></Button>
+                    
                     {Object.keys(this.state).map((list, i) => (
                         <Droppable key={list} droppableId={list}>
                             {(provided, snapshot) => (
