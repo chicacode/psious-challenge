@@ -13,15 +13,11 @@ const Layout = ({ children }) => {
       {children}
       <main>
         <h1 id="title">Virtual Reality</h1>
-        <p id="description">The evolution of an icon</p>
+        <p id="description">The evolution of the psyche</p>
       </main>
-      <div className="layout-image-container">
-
         <Timeline>
           <ItemList />
         </Timeline>
-
-      </div>
       <Footer />
     </div>
   )

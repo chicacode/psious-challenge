@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, useRef } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import  Button  from './Button';
+import Notice from './Notice';
 import '../assets/styles/components/Item.scss';
 import { v4 as uuidv4 } from 'uuid';
 import { ITEMS } from '../utils/data';
@@ -43,11 +44,12 @@ const move = (source, destination, droppableSource, droppableDestination) => {
 
 
 const Content = styled.div`
-      margin-right: 200px;
+    //   margin-right: 200px;
     `;
 
 const Item = styled.div`
       display: flex;
+      flex-wrap: wrap;
       user-select: none;
       padding: 0.2rem;
       margin: 0 0.2rem  0.5rem 0;
@@ -85,14 +87,12 @@ const Handle = styled.div`
 
 const List = styled.div`
       border: 1px ${props => (props.isDraggingOver ? 'dashed #000' : 'solid #ddd')};
-    //   background: #fff;
-     background: blue;
-      padding: 0.5rem 0.5rem 0;
+      background-color: #e9e7e7;
+      padding: 0.5rem 0.5rem 0.6rem;
       border-radius: 3px;
-    //  flex: 0 0 150px;
-      font-family: sans-serif;
-    //   display: flex;
-    //   flex-wrap: wrap;
+      font-family: Helvetica;
+      display: flex;
+      padding: 10px;
     `;
 
 const Kiosk = styled(List)`
@@ -104,24 +104,20 @@ const Kiosk = styled(List)`
 
 const Container = styled(List)`
     //   margin: 0.5rem 0.5rem 1.5rem;
+    background: blue;
     `;
 
-const Notice = styled.div`
-      display: flex;
-      align-items: center;
-      align-content: center;
-      justify-content: center;
-      padding: 0.5rem;
-      margin: 0 0.5rem 0.5rem;
-      border: 1px solid transparent;
-      line-height: 1.5;
-      color: #aaa;
-    `;
 
 class ItemList extends Component {
+    constructor(props) {
+        super(props);
+      }
     state = {
-        [uuidv4()]: []
+        [uuidv4()]: [],
+        position: {}
     };
+
+
     onDragEnd = result => {
         const { source, destination } = result;
 
@@ -166,10 +162,31 @@ class ItemList extends Component {
     addList = e => {
         this.setState({ [uuidv4()]: [] });
     };
+    componentDidMoun(){
+      
+        this.export();
+      };
 
+    ref  = React.createRef();
+    export = e =>{ 
+    
+        this.setState( state => ({ position: {...state.position }} ))
+        console.log('Elemt state REFFF', this.state);
+
+        e.preventDefault();
+
+
+    }
+
+
+    // { ...console.log('El ref es: ', ...provided.draggableProps.getBoundingClientRect())}
     // Normally you would want to split things out into separate components.
     // But in this example everything is just done in one place for simplicity
     render() {
+        const addList = "Add List";
+        const exportData = "Export";
+
+
         return (
             <DragDropContext onDragEnd={this.onDragEnd}>
                 <Droppable droppableId="ITEMS" isDropDisabled={true}>
@@ -205,15 +222,17 @@ class ItemList extends Component {
                         </Kiosk>
                     )}
                 </Droppable>
+               
                 <Content>
-                    <Button addList={this.addList}></Button>
-                    
+                    <Button element={this.addList}>{ addList }</Button>
+                    <Button element={this.export}>{ exportData }</Button>
                     {Object.keys(this.state).map((list, i) => (
                         <Droppable key={list} droppableId={list}>
                             {(provided, snapshot) => (
                                 <Container
                                     ref={provided.innerRef}
-                                    isDraggingOver={snapshot.isDraggingOver}>
+                            
+                                    isDraggingOver={snapshot.isDraggingOver} >
                                     {this.state[list].length
                                         ? this.state[list].map(
                                             (item, index) => (
@@ -224,13 +243,13 @@ class ItemList extends Component {
                                                     {(provided, snapshot) => (
                                                         <Item
                                                             ref={
-                                                                provided.innerRef
+                                                                provided.innerRef 
                                                             }
                                                             {...provided.draggableProps}
                                                             isDragging={snapshot.isDragging}
                                                             style={
                                                                 provided.draggableProps.style
-                                                            }>
+                                                            }        >
                                                             <Handle
                                                                 {...provided.dragHandleProps}>
                                                                 <svg
