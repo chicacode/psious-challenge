@@ -1,7 +1,7 @@
-import React, { Component, useRef } from 'react';
+import React, { Component } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-import  Button  from './Button';
+import Button from './Button';
 import Notice from './Notice';
 import '../assets/styles/components/Item.scss';
 import { v4 as uuidv4 } from 'uuid';
@@ -93,6 +93,7 @@ const List = styled.div`
       font-family: Helvetica;
       display: flex;
       padding: 10px;
+
     `;
 
 const Kiosk = styled(List)`
@@ -103,20 +104,21 @@ const Kiosk = styled(List)`
 `;
 
 const Container = styled(List)`
-    //   margin: 0.5rem 0.5rem 1.5rem;
-    background: blue;
+      margin: 0.5rem 0.5rem 0.5rem;
     `;
 
 
 class ItemList extends Component {
     constructor(props) {
         super(props);
-      }
+    }
     state = {
         [uuidv4()]: [],
-        position: {}
+        position: {
+            x: 0,
+            y: 0
+        }
     };
-
 
     onDragEnd = result => {
         const { source, destination } = result;
@@ -162,30 +164,32 @@ class ItemList extends Component {
     addList = e => {
         this.setState({ [uuidv4()]: [] });
     };
-    componentDidMoun(){
-      
+
+    componentDidMoun() {
         this.export();
-      };
+    };
 
-    ref  = React.createRef();
-    export = e =>{ 
-    
-        this.setState( state => ({ position: {...state.position }} ))
-        console.log('Elemt state REFFF', this.state);
-
+    ref = React.createRef();
+    export = e => {
         e.preventDefault();
 
+        this.setState(state => ({
+             ...state,
+            position: {
+                x: e.PageX,
+                y: e.PageY
+              }
+    
+        }))
+        console.log('Reff:', this.state)
 
     }
 
-
-    // { ...console.log('El ref es: ', ...provided.draggableProps.getBoundingClientRect())}
     // Normally you would want to split things out into separate components.
     // But in this example everything is just done in one place for simplicity
     render() {
         const addList = "Add List";
         const exportData = "Export";
-
 
         return (
             <DragDropContext onDragEnd={this.onDragEnd}>
@@ -222,16 +226,17 @@ class ItemList extends Component {
                         </Kiosk>
                     )}
                 </Droppable>
-               
+
                 <Content>
-                    <Button element={this.addList}>{ addList }</Button>
-                    <Button element={this.export}>{ exportData }</Button>
+                    <Button element={this.addList}>{addList}</Button>
+                    <Button element={this.export}>{exportData}</Button>
+
                     {Object.keys(this.state).map((list, i) => (
                         <Droppable key={list} droppableId={list}>
                             {(provided, snapshot) => (
                                 <Container
                                     ref={provided.innerRef}
-                            
+
                                     isDraggingOver={snapshot.isDraggingOver} >
                                     {this.state[list].length
                                         ? this.state[list].map(
@@ -243,13 +248,13 @@ class ItemList extends Component {
                                                     {(provided, snapshot) => (
                                                         <Item
                                                             ref={
-                                                                provided.innerRef 
+                                                                provided.innerRef
                                                             }
                                                             {...provided.draggableProps}
                                                             isDragging={snapshot.isDragging}
                                                             style={
                                                                 provided.draggableProps.style
-                                                            }        >
+                                                            }       >
                                                             <Handle
                                                                 {...provided.dragHandleProps}>
                                                                 <svg

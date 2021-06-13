@@ -10,11 +10,11 @@ const Header = () => (
     </div>
     <nav id="nav-bar">
       <ul>
-        <li><a className="nav-link" href="#product">Producto</a></li>
-        <li><a className="nav-link" href="#applications">Aplicaciones</a></li>
-        <li><a className="nav-link" href="#plans"> Planes</a></li>
-        <li><a className="nav-link" href="#customers">Clientes</a></li>
-        <li><a className="nav-link" href="#resources">Recursos</a></li>
+        <li><a className="nav-link" href="#product">Product</a></li>
+        <li><a className="nav-link" href="#applications">Applications</a></li>
+        <li><a className="nav-link" href="#science"> Science </a></li>
+        <li><a className="nav-link" href="#customers">Customers</a></li>
+        <li><a className="nav-link" href="#resources">Resources</a></li>
       </ul>
     </nav>
   </header>
